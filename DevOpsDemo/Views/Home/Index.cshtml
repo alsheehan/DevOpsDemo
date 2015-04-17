@@ -1,48 +1,141 @@
 ﻿@using System.Configuration
 
 @{
-    ViewBag.Title = "Deployed via Git Hub - with online changes";
+    //ViewBag.Title = "Deployed via Git Hub - with online changes";
+    ViewBag.Title = ConfigurationManager.AppSettings["AppName"];
+
 }
 
 <h2>@ViewBag.Title</h2>
-<p></p>
-
-<a class="navbar-brand" href="/">@ConfigurationManager.AppSettings["AppName"]</a>
-
-    <section id="overview">
-        <header>Demonstrating the Dev Ops model with Azure and Visual Studio</header>
-    </section>
-
-
-    <div id="accordion">
-        <h3>Mark Tag</h3>
-        <div>
-            <p>
-                I am going to  
-                <mark>
-                    mark this text
-                </mark> 
-                  using the mark tag
-            </p>
+<form class="form-horizontal">
+    <fieldset class="col-sm-6">
+        <legend>Information</legend>
+        <div class="form-group">
+            <label for="fullname" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" id="fullname" name="fullname" class="form-control"  />
+                <span class="help-block">Here is some text to help you</span>
+            </div>
         </div>
-        <h3>Progress Tag 2</h3>
-        <div>
-            <p>
-                Progress Tag
-            </p>
-            <p>
-                <progress value="75" max="100"></progress>
-            </p>
+
+        <div class="form-group">
+            <label for="comments" class="col-sm-2 control-label">Comments</label>
+            <div class="col-sm-10 control-label">
+                <textarea name="comments" id="comments" class="form-control" rows="5" cols="40"></textarea>
+            </div>
         </div>
-        <h3>Meter Tag</h3>
-        <div>
-            <p>
-                Meter Tag
-            </p>
-            <p>
-                <meter value="6" min="0" max="10">
-                    6 out of 10
-                </meter>
-            </p>
+
+        <div class="form-group">
+            <label for="luckynumber" class="col-sm-2 control-label">Lucky Number</label>
+            <div class="col-sm-10">
+                <select name="luckynumber" id="luckynumber" class="form-control">
+                    <option>double</option>
+                    <option>seven</option>
+                    <option>thirteen</option>
+                </select>
+            </div>
         </div>
-    </div>
+    </fieldset>
+
+    <fieldset class="col-sm-6" >
+        <legend>Survey</legend>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 ">
+                <div class="checkbox">
+                    <label><input type="checkbox" name="pet" id="pet" value="dog" />Own a Dog</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="pet" id="pet" value="cat" />Own a Cat</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="pet" id="pet" value="owned" />Own by a Cat</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 ">
+                <span><b>Your Favourite Weather</b></span><br />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 ">
+                <div class="radio">
+                    <label><input type="radio" id="count" name="count" value="hot" /> hot</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="count" name="count" value="cold" /> cold</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="count" name="count" value="rainy" /> rainy</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" class="btn btn-primary" value="Submit" />
+            </div>
+        </div>
+    </fieldset>
+
+</form>
+
+<script>
+    /*
+    $('form').validate({
+        rules: {
+            fullname: {
+                required: true
+            },
+            comments: {
+                required: true
+            }
+        }
+    });
+    */
+
+    //$(':submit').css('border', '3px solid red');
+    //$(':text').css('border', '3px solid red');
+   // $(':submit').css('border', '3px solid red');
+   // $(':submit').css('border', '3px solid red');
+    //$(':submit').css('border', '3px solid red');
+
+    //$(':text').css('border', '3px solid red'); /// Not working for me for some reason
+    //$(alert('working'))
+    //setTimeout(function () {
+    //    $(':focus').css('border', '3px solid red');
+    //}, 3000);
+
+    //$(':enabled').css('border', '3px solid red');
+    //$(':radio').css('border', '3px solid red');
+
+    // drawing a wrapper around a focused input
+  //  $(':input').focus(function () {
+  //      $(this).css('border', '3px solid blue');
+  //  });
+
+    // drawing a wrappre around an imput control that has lost focus
+//    $(':input').blur(function () {
+//        $(this).css('border', '2px solid green');
+//    });
+
+    // This works for everything but the checkboxes and tick boxes - it even works for the button
+//    $(':input').change(function () {
+//        $(this).css('border', '1px solid black');
+//    });
+
+    // This is not working
+//    $(':submit').submit(function () {
+//        alert('Submitting');
+//    });
+    
+</script>
+
+
+
+
+
+
