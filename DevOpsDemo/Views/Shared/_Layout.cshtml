@@ -54,26 +54,7 @@
     @RenderSection("scripts", required: false)
 
 
-    <script>
-
-        $(':submit').css('border', '3px solid red');
-        $(':text').css('border', '3px solid red');
-        $(':checkbox').css('border', '3px solid red');
-
-        $('form').validate({
-            rules: {
-                fullname: {
-                    required: true,
-                    minlength: 5,
-                    maxlength: 10
-                },
-                comments: {
-                    required: true
-                }
-            }
-        });
-
-    </script>
+ 
 </body>
 
 </html>

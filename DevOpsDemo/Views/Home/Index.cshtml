@@ -7,9 +7,9 @@
 }
 
 <h2>@ViewBag.Title</h2>
-<form class="form-horizontal">
+<form class="form-horizontal" id="info-form">
     <fieldset class="col-sm-6">
-        <legend>Information</legend>
+        <legend>Testing Information</legend>
         <div class="form-group">
             <label for="fullname" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">
@@ -84,24 +84,42 @@
 </form>
 
 <script>
+
+    //$(":submit").css("border", "3px solid red");
+    //$(":checkbox").css("border", "3px solid red");
+    //$(":radio").css("border", "3px solid red");
+
+    var info = {
+        name: "Al Sheehan",
+        comment: "These are my comments"
+    };
+
+    $("#fullname").val(info.name);
+    $("#comments").val(info.comment);
+
+    $("#info-form").submit(function (event) {
+        info.name = $("#fullname");
+        info.comment = $("#comments");
+    });
+
     /*
-    $('form').validate({
+    $("form").submit(function (event) {
+        //event.preventDefault();
+        alert("Helo");
+    });
+    $("form").validate({
         rules: {
             fullname: {
-                required: true
+                required: true,
+                minlength: 5,
+                maxlength: 10
             },
             comments: {
                 required: true
             }
         }
     });
-    */
-
-    //$(':submit').css('border', '3px solid red');
-    //$(':text').css('border', '3px solid red');
-   // $(':submit').css('border', '3px solid red');
-   // $(':submit').css('border', '3px solid red');
-    //$(':submit').css('border', '3px solid red');
+*/
 
     //$(':text').css('border', '3px solid red'); /// Not working for me for some reason
     //$(alert('working'))
